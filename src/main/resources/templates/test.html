@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+test<br>
+${helloword}<br>
+<table style="width:100%;" cellspacing="0" cellpadding="2" bordercolor="#000000" border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>logname</th>
+            <th>ip</th>
+            <th>logtime</th>
+            <th>role</th>
+            <th>logcon</th>
+        </tr>
+    </thead>
+    <tbody>
+    <%
+    if(isNotEmpty(rootlog)){
+        for(rt in rootlog){
+    %>
+    <tr>
+        <td>${rt.id}</td>
+        <td>${rt.logname}</td>
+        <td>${rt.ip}</td>
+        <td>${rt.logtime}</td>
+        <td>${rt.role}</td>
+        <td>${rt.logcon}</td>
+    </tr>
+    <%}}%>
+    </tbody>
+</table>
+<br />
+<br />
+</body>
+</html>

@@ -1,0 +1,39 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /hello
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost/test
+    username: postgres
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+    driverClassName: org.postgresql.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 5
+    minIdle: 5
+    maxActive: 150
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    filters: stat,wall,log4j
+    logSlowSql: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+beetl:
+  templatesPath: templates
+  tplsuffix: .html
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: hlinfo.springboot.entity
+logging:
+  level: debug
+  file: log\springboot.log
